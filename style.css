@@ -1,0 +1,12 @@
+#badge {
+    display:none;                 /* 最初は非表示 */
+    background:#ffeb3b;           /* 黄色 */
+    color:#333;
+    padding:0.5rem 1rem;
+    border-radius:0.5rem;         /* 角丸 */
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+    cursor:pointer;
+    transition:transform .1s;
+  }
+  #badge:hover { transform:scale(1.05); }
+  

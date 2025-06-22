@@ -1,27 +1,38 @@
-// badge.js
+// ① 取りたいキー一覧
+const KEYS = ['utm_source','utm_medium','utm_campaign'];
 
-// 1. URL から utm_source を取得
-const params = new URLSearchParams(window.location.search);
-const utm = params.get('utm_source');
+// ② URL 解析
+const qs   = new URLSearchParams(location.search);
 
-// 2. localStorage に保存
-if (utm) {
-  localStorage.setItem('saved_utm', utm);
+// ③ localStorage とメモリに保存
+const store = {};
+KEYS.forEach(k=>{
+  const v = qs.get(k);
+  if(v) localStorage.setItem(k,v);        // 永続保存
+  store[k] = localStorage.getItem(k);     // 取り出し
+});
+
+// ④ 画面に表示＆コピー
+let current = 'utm_source';
+function render(){
+  const val = store[current];
+  document.getElementById('utmValue').textContent = val;
+  document.getElementById('badge').style.display = val?'inline-block':'none';
 }
+render();
 
-// 3. 保存済み値を取得
-const savedUtm = localStorage.getItem('saved_utm');
+// タブ切替
+document.querySelectorAll('[data-key]').forEach(btn=>{
+  btn.onclick = e=>{ current=e.target.dataset.key; render(); };
+});
 
-// 4. バッジに表示・クリック処理
-if (savedUtm) {
-  const badge = document.getElementById('badge');
-  const span = document.getElementById('utmValue');
-  span.textContent = savedUtm;
-  badge.style.display = 'inline-block';
-
-  badge.addEventListener('click', () => {
-    navigator.clipboard.writeText(savedUtm)
-      .then(() => alert(`“${savedUtm}” をコピーしました！`))
-      .catch(() => alert('コピーに失敗しました'));
+// クリック→コピー＋GA4
+document.getElementById('badge').onclick = ()=>{
+  const val = store[current];
+  navigator.clipboard.writeText(val).then(()=>{
+    if(window.gtag){
+      gtag('event','copy_utm',{utm_key:current,utm_val:val});
+    }
+    alert(`${val} をコピーしました`);
   });
-}
+};
