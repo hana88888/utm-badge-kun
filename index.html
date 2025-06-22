@@ -20,7 +20,14 @@
   <h1>UTM バッジくん</h1>
   <div id="badge" style="display:none; padding:8px; background:#ff0; cursor:pointer;">
     UTM: <span id="utmValue"></span> (クリックでコピー)
+  <!-- ▼ 追加：タブ切り替えボタン -->
+    <div id="badge-tabs" style="margin: 8px 0;">
+    <button data-key="utm_source">Source</button>
+    <button data-key="utm_medium">Medium</button>
+    <button data-key="utm_campaign">Campaign</button>
   </div>
+  <!-- ▲ ここまで -->
+  
   <script src="badge.js"></script>
 </body>
 </html>

@@ -10,3 +10,15 @@
   }
   #badge:hover { transform:scale(1.05); }
   
+  #badge-tabs button {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    margin-right: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #badge-tabs button:hover {
+    background: #ddd;
+  }
+  
