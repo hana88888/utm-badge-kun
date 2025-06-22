@@ -1,0 +1,26 @@
+{
+  "name": "utm-badge-kun",
+  "version": "1.0.0",
+  "description": "初回コミット",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hana88888/utm-badge-kun.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hana88888/utm-badge-kun/issues"
+  },
+  "homepage": "https://github.com/hana88888/utm-badge-kun#readme",
+  "devDependencies": {
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.32.0",
+    "prettier": "^3.5.3"
+  }
+}
