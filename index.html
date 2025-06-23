@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <meta charset="UTF-8">
+  <title>UTM バッジくん</title>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -8,8 +10,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5XG7D3G2');</script>
   <!-- End Google Tag Manager -->
-  <meta charset="UTF-8">
-  <title>UTM バッジくん</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,16 +18,16 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <h1>UTM バッジくん</h1>
-  <div id="badge" style="display:none; padding:8px; background:#ff0; cursor:pointer;">
-    UTM: <span id="utmValue"></span> (クリックでコピー)
   <!-- ▼ 追加：タブ切り替えボタン -->
-    <div id="badge-tabs" style="margin: 8px 0;">
+  <div id="badge-tabs" style="margin: 8px 0;">
     <button data-key="utm_source">Source</button>
     <button data-key="utm_medium">Medium</button>
     <button data-key="utm_campaign">Campaign</button>
   </div>
   <!-- ▲ ここまで -->
-  
+  <div id="badge" style="display:none; padding:8px; background:#ff0; cursor:pointer;">
+    UTM: <span id="utmValue"></span> (クリックでコピー)
+  </div>>
   <script src="badge.js"></script>
 </body>
 </html>
