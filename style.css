@@ -1,3 +1,63 @@
+:root{
+  --c-primary: #ffeb3b;         /* 基本の黄色 */
+  --c-primary-text: #222;       /* バッジ文字色 */
+  --c-border: rgba(0,0,0,.15);  /* 影／境界 */
+  --space: 1rem;                /* 基本余白 */
+  --radius: .5rem;              /* 角丸 */
+}
+
+body{
+  font-family: system-ui, sans-serif;
+  margin: var(--space);
+}
+h1{ margin-bottom: var(--space); }
+
+#badge-tabs{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: var(--space);
+}
+#badge-tabs button{
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: .25rem .75rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background .15s;
+}
+#badge-tabs button:hover,
+#badge-tabs button:focus{
+  background: #ddd;
+  outline: none;
+}
+
+#badge{
+  display:none;                 /* JS で表示切替 */
+  background: var(--c-primary);
+  color: var(--c-primary-text);
+  padding: .5rem 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px var(--c-border);
+  cursor: pointer;
+  transition: transform .1s ease, box-shadow .1s ease;
+}
+#badge:hover{
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 12px var(--c-border);
+}
+
+#badge:focus{
+  outline: 3px solid #1976d2;   /* 青めのリング */
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px){
+  :root{ --space: .75rem; }
+  #badge{ font-size: .9rem; }
+}
+
+
 #badge {
     display:none;                 /* 最初は非表示 */
     background:#ffeb3b;           /* 黄色 */
