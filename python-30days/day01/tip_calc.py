@@ -6,7 +6,7 @@ def calc_per_person(total: float, people: int, tip_pct: float = 0.10) -> int:
     3834
     """
     if people <= 0:
-        raise ValueError("人数は 1 人以上にしてください")
+        raise ValueError("人数は 1 人以上にしてください.")
     pay_total = total * (1 + tip_pct)
     return math.ceil(pay_total / people)
 

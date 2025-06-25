@@ -1,0 +1,7 @@
+# --- Python virtual env ---
+venv/
+# --- キャッシュ ---
+__pycache__/
+*.py[cod]
+# --- VS Code 設定 ---
+.vscode/
